@@ -1,5 +1,15 @@
 # ME Employees APP
 
+Employees app lists the users bio and their photo
+
+##Employees List Screen:
+
+![alt text](https://github.com/naveenprabhu/Employees/blob/master/res/images/Employee_List.png)
+
+## Employess Detail Screen:
+
+![alt text](https://github.com/naveenprabhu/Employees/blob/master/res/images/Employee_Detail.png)
+
 ## Development 
 
 
