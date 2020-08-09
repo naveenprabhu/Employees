@@ -49,6 +49,7 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava3:$rxAdapterVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion"
 
 
 

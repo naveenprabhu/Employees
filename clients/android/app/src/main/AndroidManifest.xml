@@ -22,7 +22,15 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+
             </intent-filter>
+        </activity>
+        <activity android:name=".employeedetail.EmployeeDetailActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".employeeslist.EmployeesListActivity">
+
         </activity>
     </application>
 

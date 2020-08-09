@@ -1,6 +1,5 @@
 package com.me.employees.interceptor
 
-import android.app.Application
 import android.content.Context
 import com.me.employees.utils.NetworkUtils
 import okhttp3.CacheControl

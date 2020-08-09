@@ -1,11 +1,13 @@
 package com.me.employees.employeeslist
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.me.employees.EmployeeApplication
 import com.me.employees.R
+import com.me.employees.employeedetail.EmployeeDetailActivity
 import kotlinx.android.synthetic.main.employee_list.*
 import javax.inject.Inject
 
@@ -38,6 +40,12 @@ class EmployeesListActivity : AppCompatActivity(), EmployeeListView {
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = employeeAdapter
+        }
+        employeeAdapter.onItemClick = {employee ->
+            var intent = Intent(this@EmployeesListActivity, EmployeeDetailActivity::class.java).apply {
+                putExtra("emp", employee.id)
+            }
+            this.startActivity(intent)
         }
     }
 

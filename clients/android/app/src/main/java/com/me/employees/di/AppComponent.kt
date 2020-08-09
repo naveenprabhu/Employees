@@ -1,6 +1,7 @@
 package com.me.employees.di
 
 import android.content.Context
+import com.me.employees.employeedetail.EmployeeDetailComponent
 import com.me.employees.employeeslist.EmployeeListComponent
 import com.me.employees.interceptor.ForceCacheInterceptor
 import dagger.BindsInstance
@@ -18,6 +19,8 @@ interface AppComponent {
     }
 
     fun employeeListComponent() : EmployeeListComponent.Factory
+
+    fun employeeDetailComponent() : EmployeeDetailComponent.Factory
 
     fun forceCacheInterceptor() : ForceCacheInterceptor
 

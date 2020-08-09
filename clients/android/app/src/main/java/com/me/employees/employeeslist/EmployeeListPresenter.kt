@@ -5,10 +5,9 @@ import com.me.employees.di.ActivityScope
 import com.me.employees.model.Employee
 import com.me.employees.service.EmployeeService
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.observers.DisposableObserver
 import io.reactivex.rxjava3.schedulers.Schedulers
-import java.util.*
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -25,14 +24,17 @@ class EmployeeListPresenter @Inject constructor(employeeService: EmployeeService
             .subscribe(object : DisposableObserver<List<Employee>>(){
                 override fun onComplete() {
                     getView().dismissSwipeRefresh()
+                    Timber.i("Employee list complete block executed")
                 }
 
                 override fun onNext(employees: List<Employee>?) {
+                    Timber.i("Employee list success response received")
                     employeeList = employees
                     getView().updateAdapter()
                 }
 
                 override fun onError(e: Throwable?) {
+                    Timber.e("Employee list error response received $e")
                     getView().displayError()
                     getView().dismissSwipeRefresh()
                 }
@@ -41,6 +43,7 @@ class EmployeeListPresenter @Inject constructor(employeeService: EmployeeService
     }
 
     fun getEmployeeAtPosistion(position: Int): Employee {
+        Timber.d("Employee list adapter at posistion $position")
         return employeeList?.get(position) ?: Employee()
     }
 }
