@@ -24,6 +24,7 @@ Install Android SDK & buildtools
 
 Open workspace
 
+	Android Project is located under Employees/clients/android
 	Android Studio -> File -> Open
 
 Run Unit Tests
