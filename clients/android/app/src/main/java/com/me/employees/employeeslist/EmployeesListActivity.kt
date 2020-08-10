@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.me.employees.EmployeeApplication
 import com.me.employees.R
 import com.me.employees.employeedetail.EmployeeDetailActivity
+import com.me.employees.utils.Constants.EMPLOYEE_ID
 import kotlinx.android.synthetic.main.employee_list.*
 import javax.inject.Inject
 
@@ -43,7 +44,7 @@ class EmployeesListActivity : AppCompatActivity(), EmployeeListView {
         }
         employeeAdapter.onItemClick = {employee ->
             var intent = Intent(this@EmployeesListActivity, EmployeeDetailActivity::class.java).apply {
-                putExtra("emp", employee.id)
+                putExtra(EMPLOYEE_ID, employee.id)
             }
             this.startActivity(intent)
         }

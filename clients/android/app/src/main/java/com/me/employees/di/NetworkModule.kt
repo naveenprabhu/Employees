@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.me.employees.interceptor.ForceCacheInterceptor
 import com.me.employees.service.EmployeeService
+import com.me.employees.utils.Constants.BASEURL
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -19,7 +20,6 @@ import javax.inject.Singleton
 
 @Module()
 class NetworkModule {
-    val BASE_URL = "http://10.0.2.2:5000/"
 
 
     @Singleton
@@ -56,7 +56,7 @@ class NetworkModule {
     @Provides
     fun providesRetrofit(gson: Gson, okHttpClient: OkHttpClient) : Retrofit{
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASEURL)
             .client(okHttpClient)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())

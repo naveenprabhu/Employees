@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.me.employees.EmployeeApplication
 import com.me.employees.R
+import com.me.employees.utils.Constants.EMPLOYEE_ID
 import com.me.employees.utils.ImageUtil
 import kotlinx.android.synthetic.main.employee_detail.*
 import javax.inject.Inject
@@ -21,7 +22,7 @@ class EmployeeDetailActivity: AppCompatActivity(), EmployeeDetailView {
         actionBar?.setDisplayHomeAsUpEnabled(true)
         presenter.setView(this)
 
-        val employeeId : Int =intent.getIntExtra("emp", 0)
+        val employeeId : Int =intent.getIntExtra(EMPLOYEE_ID, 0)
         presenter.getEmployeeDetail(employeeId)
     }
 
